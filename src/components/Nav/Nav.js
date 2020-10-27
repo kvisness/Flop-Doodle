@@ -29,7 +29,7 @@ const Nav = (props) => {
           {loginLinkData.text}
         </Link>
         {/* Show the link to the info page and the logout button if the user is logged in */}
-        {props.store.user.id && (
+        {props.store.user.id && (/*this checks the id in the userReducer */
           <>
             <Link className="nav-link" to="/info">
               Info Page

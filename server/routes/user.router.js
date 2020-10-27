@@ -8,7 +8,7 @@ const userStrategy = require('../strategies/user.strategy');
 
 const router = express.Router();
 
-// Handles Ajax request for user information if user is authenticated
+// Handles Ajax request for user information if user is authenticated and already logged in.
 router.get('/', rejectUnauthenticated, (req, res) => {
   // Send back user object from the session (previously queried from the database)
   res.send(req.user);
@@ -22,7 +22,7 @@ router.post('/register', (req, res, next) => {
   const password = encryptLib.encryptPassword(req.body.password);
 
   const queryText = `INSERT INTO "user" (username, password)
-    VALUES ($1, $2) RETURNING id`;
+    VALUES ($1, $2) RETURNING id`;//update if more fields are required
   pool
     .query(queryText, [username, password])
     .then(() => res.sendStatus(201))
@@ -34,7 +34,7 @@ router.post('/register', (req, res, next) => {
 // this middleware will run our POST if successful
 // this middleware will send a 404 if not successful
 router.post('/login', userStrategy.authenticate('local'), (req, res) => {
-  res.sendStatus(200);
+  res.sendStatus(200);//authenticates the login information entered by the user.
 });
 
 // clear all server session information about this user

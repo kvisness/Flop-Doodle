@@ -38,7 +38,7 @@ class App extends Component {
 
             {/* Visiting localhost:3000/about will show the about page. */}
             <Route
-              // shows AboutPage at all times (logged in or not)
+              // shows AboutPage at all times (logged in or not), open to anyone.
               exact
               path="/about"
               component={AboutPage}
@@ -49,14 +49,14 @@ class App extends Component {
             If the user is not logged in, the ProtectedRoute will show the LoginPage (component).
             Even though it seems like they are different pages, the user is always on localhost:3000/user */}
             <ProtectedRoute
-              // logged in shows UserPage else shows LoginPage
+              // if logged in shows UserPage else shows LoginPage
               exact
               path="/user"
               component={UserPage}
             />
 
             <ProtectedRoute
-              // logged in shows InfoPage else shows LoginPage
+              // if logged in shows InfoPage else shows LoginPage
               exact
               path="/info"
               component={InfoPage}
@@ -93,7 +93,7 @@ class App extends Component {
               authRedirect="/user"
             />
 
-            {/* If none of the other routes matched, we will show a 404. */}
+            {/* If none of the other routes above matched like "/dinasour", we will show a 404. */}
             <Route render={() => <h1>404</h1>} />
           </Switch>
           <Footer />
