@@ -5,12 +5,12 @@ This version uses React, Redux, Express, Passport, and PostgreSQL (a full list o
 We **STRONGLY** recommend following these instructions carefully. It's a lot, and will take some time to set up, but your life will be much easier this way in the long run.
 
 ## Use the Template for This Repository (Don't Clone) 
-
-- Don't Fork or Clone. Instead, click the `Use this Template` button, and make a copy to your personal account.
+X-COMPLETED--
+Don't Fork or Clone. Instead, click the `Use this Template` button, and make a copy to your personal account.
 
 
 ## Prerequisites
-
+X-COMPLETED--
 Before you get started, make sure you have the following software installed on your computer:
 
 - [Node.js](https://nodejs.org/en/)
@@ -18,8 +18,8 @@ Before you get started, make sure you have the following software installed on y
 - [Nodemon](https://nodemon.io/)
 
 ## Create database and table
-
-Create a new database called `prime_app` and create a `user` table:
+X-COMPLETED--
+Create a new database called `flop_doodle` and create a `user` table:
 
 ```SQL
 CREATE TABLE "user" (
@@ -28,11 +28,11 @@ CREATE TABLE "user" (
     "password" VARCHAR (1000) NOT NULL
 );
 ```
-
+X-COMPLETED--
 If you would like to name your database something else, you will need to change `prime_app` to the name of your new database name in `server/modules/pool.js`
 
 ## Development Setup Instructions
-
+X-COMPLETED--
 - Run `npm install`
 - Create a `.env` file at the root of the project and paste this line into the file:
   ```
@@ -55,7 +55,7 @@ Then make sure `Launch Program` is selected from the dropdown, then click the gr
 ![VSCode Debug Bar](documentation/images/vscode-debug-bar.png)
 
 ## Testing Routes with Postman
-
+X-COMPLETED--
 To use Postman with this repo, you will need to set up requests in Postman to register a user and login a user at a minimum.
 
 Keep in mind that once you using the login route, Postman will manage your session cookie for you just like a browser, ensuring it is sent with each subsequent request. If you delete the `localhost` cookie in Postman, it will effectively log you out.
