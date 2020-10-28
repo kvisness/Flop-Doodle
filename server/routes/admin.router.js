@@ -25,7 +25,24 @@ router.post('/', (req, res) => {
             console.log("in admin router POST", err)
             res.sendStatus(500)
         });
-        
+});
+
+router.delete('/:id', (req, res) => {
+    console.log(req.params);
+    console.log(`We can use SQL to delete a word with id ${req.params.id}`)
+    let queryText = `DELETE FROM "words" WHERE "id"=$1;`;
+    pool.query(queryText, [req.params.id])
+        .then(function (result) {
+            // we dont care about the result
+            // 204 NO CONTENT
+            // res.sendStatus(204);
+            res.send('Successfully Deleted Song'); // 200
+        }).catch(function (err) {
+            // uh oh, sql error. 
+            console.log('Error making query:', queryText, err);
+            // send a SERVER ERROR 500 because things went wrong
+            res.sendStatus(500);
+        });
 });
 
 module.exports = router;
