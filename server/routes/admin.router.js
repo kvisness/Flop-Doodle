@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
         });
 });
 
-router.post('/', (req, res) => {
+router.post('/words', (req, res) => {
     const {sight_word, audio} = req.body;
     const queryText = `INSERT INTO "words" (sight_word, audio)
     VALUES ($1, $2)`;//update if more fields are required
@@ -36,7 +36,7 @@ router.delete('/:id', (req, res) => {
             // we dont care about the result
             // 204 NO CONTENT
             // res.sendStatus(204);
-            res.send('Successfully Deleted Song'); // 200
+            res.send('Successfully Deleted Word'); // 200
         }).catch(function (err) {
             // uh oh, sql error. 
             console.log('Error making query:', queryText, err);
