@@ -38,8 +38,7 @@ class RegisterForm extends Component {
         <div>
           <label htmlFor="username">
             Username:
-            <input
-              type="text"
+            <input type="text"
               name="username"
               value={this.state.username}
               required
@@ -50,8 +49,7 @@ class RegisterForm extends Component {
         <div>
           <label htmlFor="password">
             Password:
-            <input
-              type="password"
+            <input type="password"
               name="password"
               value={this.state.password}
               required

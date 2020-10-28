@@ -42,8 +42,7 @@ class LoginForm extends Component {
         <div>
           <label htmlFor="username">
             Username:
-            <input
-              type="text"
+            <input type="text"
               name="username"
               required
               value={this.state.username}
@@ -54,8 +53,7 @@ class LoginForm extends Component {
         <div>
           <label htmlFor="password">
             Password:
-            <input
-              type="password"
+            <input type="password"
               name="password"
               required
               value={this.state.password}
