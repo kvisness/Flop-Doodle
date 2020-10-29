@@ -40,7 +40,7 @@ class AdminPage extends Component {
     }
 }
 const mapStateToProps = (reduxState) => ({
-    words: reduxState.words//called words from the wordsRedcuer
+    words: reduxState.words//calls words from the wordsRedcuer
 })
 
 export default connect(mapStateToProps)(AdminPage);

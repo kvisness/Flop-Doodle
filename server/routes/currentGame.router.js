@@ -3,9 +3,8 @@ const pool = require('../modules/pool');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    // Send back game_type object from the session (previously queried from the database)
-    //this should only show the types of games
-    const queryText = `SELECT "game_type" FROM "games";`;
+    // Send back sight_word object from the session (previously queried from the database)
+    const queryText = `SELECT * FROM "words"`;
     pool.query(queryText)
         .then((result) => res.send(result.rows))
         .catch((err) => {
@@ -17,7 +16,7 @@ router.get('/', (req, res) => {
 /**
  * POST route template
  */
-// router.post('/play', (req, res) => {
+// router.post('/', (req, res) => {
 //     // POST route code here
 // });
 

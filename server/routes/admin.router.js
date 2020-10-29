@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
             res.sendStatus(500)
         });
 });
-
+//allows admin to create new words
 router.post('/words', (req, res) => {
     const {sight_word, audio} = req.body;
     const queryText = `INSERT INTO "words" (sight_word, audio)
@@ -26,7 +26,7 @@ router.post('/words', (req, res) => {
             res.sendStatus(500)
         });
 });
-
+//allows admin to create remove words
 router.delete('/:id', (req, res) => {
     console.log(req.params);
     console.log(`We can use SQL to delete a word with id ${req.params.id}`)
