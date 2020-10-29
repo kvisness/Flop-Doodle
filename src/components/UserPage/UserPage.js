@@ -4,13 +4,22 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
 class UserPage extends Component {
-  // this component doesn't do much to start, just renders some user info to the DOM
+
+  onSubmit(){
+
+  }
+
   render() {
     return (
       <div>
-        <h1 id="welcome">Welcome, {this.props.store.user.username}!</h1>
-        <p>Your ID is: {this.props.store.user.id}</p>
-        <LogOutButton className="log-in" />
+        <form onSubmit={this.onSubmit}>
+          <h1 id="welcome">Welcome {this.props.store.user.username}!</h1>
+          <p>Select your game!</p>
+          <div>
+            <button type="submit">3-letter words</button><br />
+          </div><br />
+          <LogOutButton className="log-in" />
+        </form>
       </div>
     );
   }

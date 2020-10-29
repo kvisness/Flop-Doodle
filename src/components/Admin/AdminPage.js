@@ -1,34 +1,46 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import mapStoreToProps from '../../redux/mapStoreToProps';
-//import LoginForm from '../LoginForm/LoginForm';
+import WordList from './WordList';
 
 class AdminPage extends Component {
-componentDidMount(){
-    this.props.dispatch({
-        type: 'FETCH_WORDS'
-    })
-}
 
+    componentDidMount() {
+        this.props.dispatch({
+            type: 'FETCH_WORDS'
+        })
+    }
+    onSubmit = (event) => {
+        event.preventDefault();
+
+        // simple dispatch for the saga to take care of
+        this.props.dispatch({
+            type: 'ADD_WORDS',
+            payload: this.state
+        });
+    }
     render() {
+        console.log(this.props)
         return (
             <div>
+                
                 <table>
                     <thead>
                         <tr>
-                            <th>Words</th>
+                            <th>Words List:</th><br />
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>dad</td>
-                        </tr>
+                        {this.props.words[0] && this.props.words.map((word) => <WordList word={word}/>)}
+
                     </tbody>
-                  
-              </table>
+
+                </table>
             </div>
         );
     }
 }
+const mapStateToProps = (reduxState) => ({
+    words: reduxState.words//called words from the wordsRedcuer
+})
 
-export default connect(mapStoreToProps)(AdminPage);
+export default connect(mapStateToProps)(AdminPage);
