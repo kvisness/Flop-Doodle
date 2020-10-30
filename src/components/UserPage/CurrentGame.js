@@ -26,11 +26,14 @@ class CurrentGame extends Component {
                     <table>
                         <thead>
                             <tr>
-                                <th>Words List:</th><br />
+                            <th>Words List:</th><br /><br />
                             </tr>
                         </thead>
+                    <div>
+                        <button type="submit">LET'S PLAY!</button><br />
+                    </div>
                         <tbody>
-                            {this.props.words[0] && this.props.words.map((word) => <WordList word={word} />)}
+                            {this.props.words && this.props.words.map((word) => <WordList word={word} />)}
                         </tbody>
                     </table>
                 </div>

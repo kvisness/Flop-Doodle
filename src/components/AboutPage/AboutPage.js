@@ -7,7 +7,6 @@ import React from 'react';
 
 const AboutPage = () => (
   <div className="container">
-    <div>
       <p>Welcome to Flop-Doodle!</p>
       <p>With having three boys ages 11 and twins at 5 years old, I wanted to create a 
         sight-word game that was challenging but short so children could build their word 
@@ -24,7 +23,6 @@ const AboutPage = () => (
         create the app!  Points are awarded and it’s always a blast for kids to try and beat
         their last score so they can proudly say “I PLAYED on FLOP-DOODLE today!”</p>
     </div>
-  </div>
 );
 
 export default AboutPage;   
