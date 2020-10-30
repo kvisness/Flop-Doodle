@@ -20,8 +20,11 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import AdminPage from '../Admin/AdminPage';
+import Games from '../UserPage/Games';
+
 
 import './App.css';
+import CurrentGame from '../UserPage/CurrentGame';
 
 class App extends Component {
   componentDidMount() {
@@ -54,6 +57,18 @@ class App extends Component {
               exact
               path="/user"
               component={UserPage}
+            />
+            <ProtectedRoute
+              // if logged in shows UserPage else shows LoginPage
+              exact
+              path="/games"
+              component={Games}
+            />
+            <ProtectedRoute
+              // if logged in shows UserPage else shows LoginPage
+              exact
+              path="/currentGame"
+              component={CurrentGame}
             />
             <ProtectedRoute
               // if logged in shows AdminPage else shows LoginPage
