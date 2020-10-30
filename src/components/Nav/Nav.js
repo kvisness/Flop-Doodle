@@ -22,6 +22,13 @@ const Nav = (props) => {
         <h2 className="nav-title">Prime Solo Project</h2>
       </Link>
       <div className="nav-right">
+        {/* Always show these two links since they are not protected */}
+        <Link className="nav-link" to="/about">
+          About
+        </Link>
+        <Link className="nav-link" to="/info">
+          Info Page
+        </Link>
         <Link className="nav-link" to={loginLinkData.path}>
           {/* Show this link if they are logged in or not,
           but call this link 'Home' if they are logged in,
@@ -31,16 +38,9 @@ const Nav = (props) => {
         {/* Show the link to the info page and the logout button if the user is logged in */}
         {props.store.user.id && (/*this checks the id in the userReducer */
           <>
-            <Link className="nav-link" to="/info">
-              Info Page
-            </Link>
             <LogOutButton className="nav-link" />
           </>
         )}
-        {/* Always show this link since the about page is not protected */}
-        <Link className="nav-link" to="/about">
-          About
-        </Link>
       </div>
     </div>
   );

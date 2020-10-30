@@ -27,6 +27,16 @@ class Games extends Component {
                     <h1 id="welcome">LET'S GOOOOOOO!!!</h1>
                     <p>Select your game!</p>
                     <div>
+                        <p>How to Play Flop-Doodle:</p>
+                        <ol>
+                            <li>Select length of words</li>
+                            <li>Push Play</li>
+                            <li>Listen For The Word</li>
+                            <li>Select Correct Word</li>
+                        </ol>
+
+                    </div>
+                    <div>
                         <NavLink to="/currentGame">3-letter words</NavLink>{/*THIS needs to link to the CurrentGame page*/}<br />
                         {/*<button onClick={this.addWord('dad')}>Add Word</button>*/}
                         {/*<button type="submit">2-letter words</button><br /> <br /> 
