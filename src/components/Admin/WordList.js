@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import { Howl } from 'howler';
 
 class WordList extends Component {
     componentDidMount() {
@@ -22,6 +22,14 @@ class WordList extends Component {
             payload: id
         })
     }
+    playWord = (file_url) => {
+        console.log('attempting to play file', file_url);
+        let sound = new Howl({
+            src: file_url,
+            format: ['wav']
+        });
+        sound.play();
+    }
     render() {
         console.log(this.props)
         const word = this.props.word
@@ -30,7 +38,10 @@ class WordList extends Component {
             <tr>
                 <td>{word.sight_word}</td>
                 <td>{word.audio}</td>
+                <td><button onClick={() => this.playWord(word.audio)}>Play Word</button></td>
                 <td><button onClick={() => this.removeWord(word.id)}>Remove Word</button></td>
+                
+
             </tr>
             </>
         );
