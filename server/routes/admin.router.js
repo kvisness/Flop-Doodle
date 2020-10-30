@@ -17,7 +17,9 @@ router.get('/', (req, res) => {
 });
 //allows admin to create new words
 router.post('/words', (req, res) => {
+
     const {sight_word, audio} = req.body;
+    console.log('in adminrouter', sight_word, audio)
     const queryText = `INSERT INTO "words" (sight_word, audio)
     VALUES ($1, $2)`;//update if more fields are required
     pool

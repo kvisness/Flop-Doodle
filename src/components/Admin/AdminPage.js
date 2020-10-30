@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import EditForm from './EditForm';
 import WordList from './WordList';
 
 class AdminPage extends Component {
@@ -31,10 +32,10 @@ class AdminPage extends Component {
                     </thead>
                     <tbody>
                         {this.props.adminWords && this.props.adminWords.map((word) => <WordList word={word}/>)}
-
                     </tbody>
 
                 </table>
+                <EditForm/>
             </div>
         );
     }

@@ -12,19 +12,21 @@ function* getWords() {
         }
 }
 
-function* addWords(){
+function* addWords(action){
     try {
-        const response = yield axios.post('/api/admin');
-        yield put({ type: 'ADD_WORD', payload: response.data });
+        console.log('in adminsaga', action.payload)
+        yield axios.post('/api/admin/words/', action.payload);
+        yield put({ type: 'FETCH_ADMINWORDS' });
         }
     catch (error) {
-        console.log('AdminSaga get request in addWords failed', error);
+        console.log('AdminSaga post request in addWords failed', error);
         }
 }
 
 function* removeWords(action){
     try {
         yield axios.delete(`/api/admin/${action.payload}`);
+        //refreshes
         yield put({ type: 'FETCH_ADMINWORDS'});
     }
     catch (error) {
@@ -36,7 +38,7 @@ function* adminSaga() {
     yield takeLatest('FETCH_ADMINWORDS', getWords);
     yield takeLatest('ADD_WORD', addWords);
     yield takeLatest('REMOVE_WORD', removeWords);
-    
+  
 }
 
 export default adminSaga;
