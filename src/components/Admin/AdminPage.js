@@ -6,7 +6,7 @@ class AdminPage extends Component {
 
     componentDidMount() {
         this.props.dispatch({
-            type: 'FETCH_WORDS'
+            type: 'FETCH_ADMINWORDS'
         })
     }
     onSubmit = (event) => {
@@ -14,7 +14,7 @@ class AdminPage extends Component {
 
         // simple dispatch for the saga to take care of
         this.props.dispatch({
-            type: 'ADD_WORDS',
+            type: 'ADD_ADMINWORDS',
             payload: this.state
         });
     }
@@ -30,7 +30,7 @@ class AdminPage extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.props.words[0] && this.props.words.map((word) => <WordList word={word}/>)}
+                        {this.props.adminWords && this.props.adminWords.map((word) => <WordList word={word}/>)}
 
                     </tbody>
 
@@ -40,7 +40,7 @@ class AdminPage extends Component {
     }
 }
 const mapStateToProps = (reduxState) => ({
-    words: reduxState.words//calls words from the wordsRedcuer
+    adminWords: reduxState.admin//calls games from the wordsRedcuer
 })
 
 export default connect(mapStateToProps)(AdminPage);

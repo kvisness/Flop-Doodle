@@ -3,9 +3,11 @@ const pool = require('../modules/pool');
 const router = express.Router();
 //const {rejectUnauthenticated} = require('../modules/authentication-middleware');
 
+// TODO: dont forget to protect these routes
 router.get('/', (req, res) => {
     // Send back sight_word object from the session (previously queried from the database)
-    const queryText = `SELECT * FROM "words"`;
+    // const queryText = `SELECT * FROM "words" WHERE length(sight_word)=3 ORDER BY RANDOM() LIMIT 10;`;
+    const queryText = `SELECT * FROM "words" ORDER BY sight_word;`;
     pool.query(queryText)
         .then((result) => res.send(result.rows))
         .catch((err) => {
@@ -22,7 +24,7 @@ router.post('/words', (req, res) => {
         .query(queryText, [sight_word, audio])
         .then(() => res.sendStatus(201))
         .catch((err) => {
-            console.log("in admin router POST", err)
+            console.log("Error in admin router POST", err)
             res.sendStatus(500)
         });
 });

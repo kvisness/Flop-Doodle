@@ -1,9 +1,9 @@
-const adminReducer = (state = {}, action) => {
+const adminReducer = (state = [], action) => {
     switch (action.type) {
-        case 'SET_ADMIN':
+        case 'SET_ADMINWORDS':
             return action.payload;
-        case 'UNSET_ADMIN':
-            return {};
+        case 'UNSET_ADMINWORDS':
+            return [];
         default:
             return state;
     }

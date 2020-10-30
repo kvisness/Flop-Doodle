@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
     // Send back game_type object from the session (previously queried from the database)
     //this should only show the types of games
     const queryText = `SELECT "game_type" FROM "games";`;
-    pool.query(queryText)
+    pool.query(queryText)//returns the list of games from the database
         .then((result) => res.send(result.rows))
         .catch((err) => {
             console.log("error in admin router GET", err);
