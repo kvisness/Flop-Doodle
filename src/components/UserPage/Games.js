@@ -25,19 +25,21 @@ class Games extends Component {
             <div>
                 <form onSubmit={this.onSubmit}>
                     <h1 id="welcome">LET'S GOOOOOOO!!!</h1>
-                    <p>Select your game!</p>
+                    
                     <div>
                         <p>How to Play Flop-Doodle:</p>
                         <ol>
-                            <li>Select length of words</li>
-                            <li>Push Play</li>
-                            <li>Listen For The Word</li>
-                            <li>Select Correct Word</li>
+                            <li>Select length of words to learn.</li>
+                            <li>Push Play.</li>
+                            <li>Listen For The Word.</li>
+                            <li>Select Correct Word and score</li>
                         </ol>
 
-                    </div>
+                    </div><br />
+                    <p>Select your game!</p>
                     <div>
-                        <NavLink to="/currentGame">2-letter words</NavLink>{/*THIS needs to link to the CurrentGame page*/}<br /><br />
+                        {/*THIS needs to link to the CurrentGame page*/}
+                        <NavLink to="/currentGame">2-letter words</NavLink><br /><br />
                         <NavLink to="/currentGame">3-letter words</NavLink><br /><br />
                         <NavLink to="/currentGame">4-letter words</NavLink><br /><br />
                         <NavLink to="/currentGame">5-letter words</NavLink><br /><br />

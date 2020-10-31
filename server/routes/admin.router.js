@@ -8,7 +8,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
     // Send back sight_word object from the session (previously queried from the database)
     // const queryText = `SELECT * FROM "words" WHERE length(sight_word)=3 ORDER BY RANDOM() LIMIT 10;`;
-    const queryText = `SELECT * FROM "words" ORDER BY sight_word;`;
+    const queryText = `SELECT * FROM "words" ORDER BY "id";`;
     pool.query(queryText)
         .then((result) => res.send(result.rows))
         .catch((err) => {

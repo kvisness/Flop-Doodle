@@ -6,6 +6,7 @@ const router = express.Router();
 
 
 router.get('/', (req, res) => {
+    res.send(req.user);
     // Send back sight_word object from the session (previously queried from the database)
     const queryText = `SELECT * FROM "words" WHERE length(sight_word)=3 ORDER BY RANDOM() LIMIT 10;`;
     
