@@ -14,11 +14,15 @@ router.get('/', (req, res) => {
         });
 });
 
-/**
- * POST route template
- */
-// router.post('/play', (req, res) => {
-//     // POST route code here
-// });
+router.get('/currentGame', (req, res) => {
+     const queryText = `SELECT * FROM "words" WHERE length(sight_word)=3 ORDER BY RANDOM() LIMIT 10;`;
+
+     pool.query(queryText)
+         .then((result) => res.send(result.rows))
+         .catch((err) => {
+             console.log("error in admin router GET", err);
+             res.sendStatus(500)
+         });
+ });
 
 module.exports = router;

@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
-import {
-  HashRouter as Router,
-  Route,
-  Redirect,
-  Switch,
-} from 'react-router-dom';
+import {HashRouter as Router,Route,Redirect,Switch,} from 'react-router-dom';
 
 import { connect } from 'react-redux';
-
+import './App.css';
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 
@@ -21,9 +16,6 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import AdminPage from '../Admin/AdminPage';
 import Games from '../UserPage/Games';
-
-
-import './App.css';
 import CurrentGame from '../UserPage/CurrentGame';
 
 class App extends Component {
@@ -33,6 +25,7 @@ class App extends Component {
 
   render() {
     return (
+      <div className="App">
       <Router>
         <div>
           <Nav />
@@ -120,6 +113,7 @@ class App extends Component {
           <Footer />
         </div>
       </Router>
+      </div>
     );
   }
 }
