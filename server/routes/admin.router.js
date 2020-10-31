@@ -4,6 +4,7 @@ const router = express.Router();
 //const {rejectUnauthenticated} = require('../modules/authentication-middleware');
 
 // TODO: dont forget to protect these routes
+
 router.get('/', (req, res) => {
     // Send back sight_word object from the session (previously queried from the database)
     // const queryText = `SELECT * FROM "words" WHERE length(sight_word)=3 ORDER BY RANDOM() LIMIT 10;`;
@@ -18,7 +19,7 @@ router.get('/', (req, res) => {
 //allows admin to create new words
 router.post('/words', (req, res) => {
 
-    const {sight_word, audio} = req.body;
+    const { sight_word, audio } = req.body;
     console.log('in adminrouter', sight_word, audio)
     const queryText = `INSERT INTO "words" (sight_word, audio)
     VALUES ($1, $2)`;//update if more fields are required

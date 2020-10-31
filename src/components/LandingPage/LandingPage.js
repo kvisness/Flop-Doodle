@@ -26,8 +26,8 @@ class LandingPage extends Component {
 
         <div className="grid">
           <div className="grid-col grid-col_8">
-            <p>
-              What's up Flop-Doodle!  Get ready to learn some words!<br /><br />
+            <p>What's up Flop-Doodle! <br /><br />
+              Get ready to learn some words!<br /><br />
               Please register or login.
             </p>
           </div>

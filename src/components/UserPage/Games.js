@@ -37,16 +37,13 @@ class Games extends Component {
 
                     </div>
                     <div>
-                        <NavLink to="/currentGame">3-letter words</NavLink>{/*THIS needs to link to the CurrentGame page*/}<br />
-                        {/*<button onClick={this.addWord('dad')}>Add Word</button>*/}
-                        {/*<button type="submit">2-letter words</button><br /> <br /> 
-                           <button type="submit">3-letter words</button><br /><br /> 
-                           <button type="submit">4-letter words</button><br /><br /> 
-                           <button type="submit">5-letter words</button><br /><br /> 
-                           <button type="submit">6-letter words</button><br /><br /> 
-                           <button type="submit">7-letter words</button><br /> <br /> */}
+                        <NavLink to="/currentGame">2-letter words</NavLink>{/*THIS needs to link to the CurrentGame page*/}<br /><br />
+                        <NavLink to="/currentGame">3-letter words</NavLink><br /><br />
+                        <NavLink to="/currentGame">4-letter words</NavLink><br /><br />
+                        <NavLink to="/currentGame">5-letter words</NavLink><br /><br />
+                        <NavLink to="/currentGame">6-letter words</NavLink><br /><br />
+                        <NavLink to="/currentGame">7-letter words</NavLink><br />
                     </div><br />
-                    {/*<LogOutButton className="log-in" />*/}
                 </form>
             </div>
         );
