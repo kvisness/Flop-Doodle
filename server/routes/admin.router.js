@@ -31,7 +31,7 @@ router.post('/words', (req, res) => {
             res.sendStatus(500)
         });
 });
-//allows admin to create remove words
+//allows admin to remove words
 router.delete('/:id', (req, res) => {
     console.log(req.params);
     console.log(`We can use SQL to delete a word with id ${req.params.id}`)

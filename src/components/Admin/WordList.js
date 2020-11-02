@@ -37,7 +37,7 @@ class WordList extends Component {
             <>
             <tr>
                 <td>{word.sight_word}</td>
-                <td>{word.audio}</td>
+                {/*<td>{word.audio}</td>*/}
                 <td><button onClick={() => this.playWord(word.audio)}>Play Word</button></td>
                 <td><button onClick={() => this.removeWord(word.id)}>Delete Word</button></td>
                 

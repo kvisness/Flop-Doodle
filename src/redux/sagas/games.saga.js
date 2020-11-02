@@ -25,7 +25,7 @@ function* getWords() {
 
 function* gamesSaga() {
     yield takeLatest('ADD_GAMES', getGames);
-    yield takeLatest('ADD_GAMES', getWords);
+    yield takeLatest('ADD_WORDS', getWords);
 }
 
 export default gamesSaga;
