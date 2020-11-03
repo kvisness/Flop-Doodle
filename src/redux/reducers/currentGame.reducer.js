@@ -1,12 +1,12 @@
 const currentGameReducer = (state = [], action) => {
     switch (action.type) {
-        case 'SET_ADMINWORDS':
+        case 'SET_CURRENT_WORDS':
             return action.payload;
-        case 'UNSET_ADMINWORDS':
+        case 'UNSET_CURRENT_WORDS':
             return [];
-        case 'SET_MISSEDWORDS':
+        case 'SET_MISSED_WORDS':
             return action.payload
-        case 'UNSET_MISSEDWORDS':
+        case 'UNSET_MISSED_WORDS':
             return [];
         default:
             return state;

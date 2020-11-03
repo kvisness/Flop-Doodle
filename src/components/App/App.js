@@ -17,6 +17,7 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import AdminPage from '../Admin/AdminPage';
 import Games from '../UserPage/Games';
 import CurrentGame from '../UserPage/CurrentGame';
+import FinalResults from '../UserPage/FinalResults';
 
 class App extends Component {
   componentDidMount() {
@@ -63,6 +64,12 @@ class App extends Component {
               path="/currentGame"
               component={CurrentGame}
             />
+              <ProtectedRoute
+                // if logged in shows UserPage else shows LoginPage
+                exact
+                path="/finalResults"
+                component={FinalResults}
+              />
             <ProtectedRoute
               // if logged in shows AdminPage else shows LoginPage
               exact

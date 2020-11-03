@@ -1,14 +1,14 @@
-// const missedWordsReducer = (state = [], action) => {
-//     switch (action.type) {
-//         case 'SET_MISSEDWORDS':
-//             return action.payload;
-//         case 'UNSET_MISSEDWORDS':
-//             return [];
-//         default:
-//             return state;
-//     }
-// };
+const missedWordsReducer = (state = [], action) => {
+    switch (action.type) {
+        case 'SET_MISSED_WORDS':
+            return [...state, action.payload];
+        case 'UNSET_MISSED_WORDS':
+            return [];
+        default:
+            return state;
+    }
+};
 
-// // user will be on the redux state at:
-// // state.missedWords
-// export default missedWordsReducer;
+// user will be on the redux state at:
+// state.missedWords
+export default missedWordsReducer;

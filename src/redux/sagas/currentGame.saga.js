@@ -5,13 +5,25 @@ import { put, takeLatest } from 'redux-saga/effects';
 
 function* getWords() {
     try {//displays words from database
-        const response = yield axios.get('/api/admin');
-        yield put({ type: 'SET_ADMINWORDS', payload: response.data });
+        console.log('in currentGame saga getwords')
+        const response = yield axios.get('/api/currentGame');
+        console.log('response from currentgame saga getwords', response.data)
+        yield put({ type: 'SET_CURRENT_WORDS', payload: response.data });
     }
     catch (error) {
         console.log('currentGameSaga get request in getWords failed', error);
     }
 }
+// function* cdGenerator (){
+//     yield 5;
+//     const 
+// }
+// function* countDown(){
+//     let timer = 5;
+//     while (timer > 0){
+//         yield `launching timer in ${timer} seconds`;
+//     }
+// }
 
 function* missedWords (){
     try{
@@ -23,7 +35,7 @@ function* missedWords (){
     }
 }
 function* currentGameSaga() {
-    yield takeLatest('FETCH_CURRENT_GAME_WORDS', getWords);
+    yield takeLatest('FETCH_CURRENT_WORDS', getWords);
     yield takeLatest('FETCH_MISSED_WORDS', missedWords);
 }
 

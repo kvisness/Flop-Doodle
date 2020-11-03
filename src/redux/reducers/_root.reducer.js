@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import errors from './errors.reducer';
 import user from './user.reducer';
 import admin from './admin.reducer';
-import currentGame from './currentGame.reducer';
+import currentWords from './currentGame.reducer';
 import games from './games.reducer';
 //import missedWords from './missedWords.reducer';
 // rootReducer is the primary reducer for our entire project
@@ -16,7 +16,7 @@ const rootReducer = combineReducers({
   user,
   // admin: admin, // <--- same as below
   admin, // will have an id and username if someone is logged in
-  currentGame,
+  currentWords,
   games
   //missedWords
 });

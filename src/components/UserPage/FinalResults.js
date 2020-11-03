@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 //import LogOutButton from '../LogOutButton/LogOutButton';
 //import mapStoreToProps from '../../redux/mapStoreToProps';
-//import WordList from '../Admin/WordList';
+import WordList from '../Admin/WordList';
 import { Howl } from 'howler';
 import LogOutButton from '../LogOutButton/LogOutButton';
 class CurrentGame extends Component {
@@ -16,7 +16,7 @@ class CurrentGame extends Component {
         event.preventDefault();
         // simple dispatch for the saga to take care of
         this.props.dispatch({
-            type: 'ADD_MISSEDWORDS',
+            type: 'ADD_MISSED_WORDS',
             payload: this.state
         });
     }
@@ -27,6 +27,9 @@ class CurrentGame extends Component {
             format: ['wav']
         });
         sound.play();
+    }
+    playFinalMessage = () => {//plays the Congrats audio that is not stored anywhere yet
+        this.playFinalMessage(this.props.currentWords[this.state.wordIndex].audio);
     }
     render() {
         return (
