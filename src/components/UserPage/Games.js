@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 //import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-import { NavLink, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 class Games extends Component {
 
@@ -15,9 +15,10 @@ class Games extends Component {
         event.preventDefault();
         // simple dispatch for the saga to take care of
         this.props.dispatch({
-            type: 'ADD_GAMES',
-            payload: this.state
+            type: 'SET_WORD_LENGTH',
+            payload: event.target.value
         });
+        this.props.history.push('/currentGame');
     }
 
     render() {
@@ -39,12 +40,12 @@ class Games extends Component {
                     <p>Select your game!</p>
                     <div>
                         {/*THIS needs to link to the CurrentGame page*/}
-                        <NavLink to="/currentGame">2-letter words</NavLink><br /><br />
-                        <NavLink to="/currentGame">3-letter words</NavLink><br /><br />
-                        <NavLink to="/currentGame">4-letter words</NavLink><br /><br />
-                        <NavLink to="/currentGame">5-letter words</NavLink><br /><br />
-                        <NavLink to="/currentGame">6-letter words</NavLink><br /><br />
-                        <NavLink to="/currentGame">7-letter words</NavLink><br />
+                        <button value={2} onClick={this.onSubmit}>2-letter words</button><br /><br />
+                        <button value={3} onClick={this.onSubmit}>3-letter words</button><br /><br />
+                        <button value={4} onClick={this.onSubmit}>4-letter words</button><br /><br />
+                        <button value={5} onClick={this.onSubmit}>5-letter words</button><br /><br />
+                        <button value={6} onClick={this.onSubmit}>6-letter words</button><br /><br />
+                        <button value={7} onClick={this.onSubmit}>7-letter words</button><br /><br />
                     </div><br />
                 </form>
             </div>

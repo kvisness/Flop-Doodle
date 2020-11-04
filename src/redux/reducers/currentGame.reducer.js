@@ -4,10 +4,6 @@ const currentGameReducer = (state = [], action) => {
             return action.payload;
         case 'UNSET_CURRENT_WORDS':
             return [];
-        case 'SET_MISSED_WORDS':
-            return action.payload
-        case 'UNSET_MISSED_WORDS':
-            return [];
         default:
             return state;
     }

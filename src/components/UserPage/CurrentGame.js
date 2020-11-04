@@ -4,15 +4,25 @@ import { connect } from 'react-redux';
 //import mapStoreToProps from '../../redux/mapStoreToProps';
 //import WordList from '../Admin/WordList';
 import { Howl } from 'howler';
+import { withRouter, NavLink } from 'react-router-dom';
+
 class CurrentGame extends Component {
 
     state = {
         wordIndex: 0
     }
 
+
     componentDidMount() {
-        this.props.dispatch({
-            type: 'FETCH_CURRENT_WORDS'
+        this.props.dispatch({//brings in words from the db randomly as page reloads
+            type: 'FETCH_CURRENT_WORDS',
+            payload: this.props.wordLength//to the saga, bringing in a number that represents the word length needed
+        })
+        this.props.dispatch({//brings in words from the db randomly as page reloads
+            type: 'UNSET_CORRECT_WORDS'
+        })        
+        this.props.dispatch({//brings in words from the db randomly as page reloads
+            type: 'UNSET_MISSED_WORDS'
         })
     }
     onSubmit = (event) => {
@@ -23,30 +33,39 @@ class CurrentGame extends Component {
             payload: this.state
         });
     }
-    playWord = (file_url) => {//Howler
-        console.log('In CurrentGame.js attempting to play file', file_url);
+    playWord = (file_url) => {//Howler, plays audio
+        console.log(file_url);
         let sound = new Howl({
             src: file_url,
             format: ['wav']
         });
         sound.play();
     }
-    playGame = () => {//plays the audio
+    playGame = () => {//plays the audio for each word in the index
         this.playWord(this.props.currentWords[this.state.wordIndex].audio);
 
     }
     checkWord = (event) => {
-        let correct = []; 
+        console.log('in checkWord index is', this.state.wordIndex)
+        //let correct = []; 
         console.log(event.target.value)//check to see if word was correct
         if (event.target.value === this.props.currentWords[this.state.wordIndex].sight_word) {
             alert("YAY! FLOP-DOODLE!");//keep track of correct
-            correct.push('/finalResults')
+            this.props.dispatch({
+                type: 'SET_CORRECT_WORDS',
+                payload: this.props.currentWords[this.state.wordIndex].sight_word
+            })
+
         } else {//
-            alert("Please try again!");//keep track of missed
+            alert("Please try a new word!");//keep track of missed
+            this.props.dispatch({
+                type: 'SET_MISSED_WORDS',
+                payload: this.props.currentWords[this.state.wordIndex].sight_word
+            })
         }
         //check to see if game is over
         if (this.state.wordIndex >= (this.props.currentWords.length - 1)) {
-            alert("GREAT JOB FLOP-DOODLE!");
+            //alert("GREAT JOB FLOP-DOODLE!");
             this.props.history.push('/finalResults');
         } else {//sets up next round
             this.setState({ wordIndex: this.state.wordIndex + 1 });
@@ -54,10 +73,11 @@ class CurrentGame extends Component {
         }
 
     }
-    //letsPlay will check the selected word to the correct word, 
+    //playGame will check the selected word to the correct word, 
     //if correct use alert of some kind, if missed, use alert and store this word to display on FinalResults.
     render() {
         const word = this.props.currentWords
+
         return (
             <div>
                 <table>
@@ -71,7 +91,8 @@ class CurrentGame extends Component {
                         {word && word.map((currentWord) => <button onClick={this.checkWord} value={currentWord.sight_word}>{currentWord.sight_word}</button>)}
                     </tbody>
                     <div><br />
-                        <button onClick={this.playGame}>Let's PLAY! </button>
+                        <button onClick={this.playGame}>Let's PLAY! </button><br />
+                        <br /><NavLink to="/games">~--Go Back</NavLink><br />
                     </div>
                 </table>
             </div>
@@ -79,7 +100,8 @@ class CurrentGame extends Component {
     }
 }
 const mapStateToProps = (reduxState) => ({
-    currentWords: reduxState.currentWords//calls games from the wordsRedcuer
+    currentWords: reduxState.currentWords,
+    wordLength: reduxState.wordLength//calls games from the wordsRedcuer
 })
 // this allows us to use <App /> in index.js
-export default connect(mapStateToProps)(CurrentGame);
+export default connect(mapStateToProps)(withRouter(CurrentGame));
