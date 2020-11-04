@@ -22,7 +22,7 @@ class CurrentGame extends Component {
         })
         this.props.dispatch({//brings in words from the db randomly as page reloads
             type: 'UNSET_CORRECT_WORDS'
-        })        
+        })
         this.props.dispatch({//brings in words from the db randomly as page reloads
             type: 'UNSET_MISSED_WORDS'
         })
@@ -45,48 +45,62 @@ class CurrentGame extends Component {
     }
     playGame = () => {//plays the audio for each word in the index
         this.playWord(this.props.currentWords[this.state.wordIndex].audio);
-    }       
+    }
     checkWord = (event) => {
         console.log('in checkWord index is', this.state.wordIndex)
         //let correct = []; 
         console.log(event.target.value)//check to see if word was correct
         if (event.target.value === this.props.currentWords[this.state.wordIndex].sight_word) {
-            this.playWord('/Awesome_job_Flop_Doodle.m4a')
-            alert("YAY! FLOP-DOODLE!");//keep track of correct
-            this.setState({
-                correctWord: this.state.correctWord + 1,
-            });
-            this.props.dispatch({
-                type: 'SET_CORRECT_WORDS',
-                payload: this.props.currentWords[this.state.wordIndex].sight_word
-            })//this should keep track of the correctWords selected and display them on this page
+            this.playWord('/Your_awesome-ethan.m4a')
+            setTimeout(() => {
+                alert("YAY! FLOP-DOODLE!");//keep track of correct
+                this.setState({
+                    correctWord: this.state.correctWord + 1,
+                });
+                this.props.dispatch({
+                    type: 'SET_CORRECT_WORDS',
+                    payload: this.props.currentWords[this.state.wordIndex].sight_word
+                });//this should keep track of the correctWords selected and display them on this page
+                this.nextRound();
+            }, 1000)
         } else {//
-            this.playWord('/Nice_Try_Flop_Doodle.m4a')
-            alert("Please try a new word!");//keep track of missed
-            this.props.dispatch({
-                type: 'SET_MISSED_WORDS',
-                payload: this.props.currentWords[this.state.wordIndex]
-            })
+
+            this.playWord('/Ayden.m4a');
+            setTimeout(() => {
+                alert("Please try a new word!");//keep track of missed
+                this.props.dispatch({
+                    type: 'SET_MISSED_WORDS',
+                    payload: this.props.currentWords[this.state.wordIndex]
+                });
+                this.nextRound();
+            }, 1000)
         }
         //check to see if game is over
+
+    }
+    nextRound = () => {
+        console.log('in nextRound', this.state.wordIndex)
         if (this.state.wordIndex >= (this.props.currentWords.length - 1)) {
             //alert("GREAT JOB FLOP-DOODLE!");
             this.props.history.push('/finalResults');
         } else {//sets up next round
-            this.setState({ wordIndex: this.state.wordIndex + 1 });
-            this.playWord(this.props.currentWords[this.state.wordIndex + 1].audio);
+            const nextIndex = this.state.wordIndex + 1;
+            this.setState({ wordIndex: nextIndex });
+            this.playWord(this.props.currentWords[nextIndex].audio);
+            console.log('in nextRound this.playWord', this.props.currentWords[nextIndex].audio)
         }
-     }
-      
+    }
     //checkWord will check the selected word to the correct word, 
     //if correct use alert of some kind, if missed, use alert and store this word to display on FinalResults.
     render() {
+        console.log(this.props)
+
         const word = this.props.currentWords
 
         return (
             <div>
                 <h2>Flop-Doodle!</h2><br /><br />
-                    Correct Words: {this.state.correctWord} 
+                    Correct Words: {this.state.correctWord}
                 <table>
                     <thead>
                         <tr>
