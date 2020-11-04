@@ -47,15 +47,14 @@ class CurrentGame extends Component {
         this.playWord(this.props.currentWords[this.state.wordIndex].audio);
     }
     checkWord = (event) => {
-        console.log('in checkWord index is', this.state.wordIndex)
-        //let correct = []; 
+        console.log('in checkWord index is', this.state.wordIndex) 
         console.log(event.target.value)//check to see if word was correct
         if (event.target.value === this.props.currentWords[this.state.wordIndex].sight_word) {
             this.playWord('/Your_awesome-ethan.m4a')
-            setTimeout(() => {
-                alert("YAY! FLOP-DOODLE!");//keep track of correct
+            setTimeout(() => {//this was added because the alert was disrupting the flow of the words played.
+                alert("YAY! FLOP-DOODLE!");
                 this.setState({
-                    correctWord: this.state.correctWord + 1,
+                    correctWord: this.state.correctWord + 1,//keep track of correct
                 });
                 this.props.dispatch({
                     type: 'SET_CORRECT_WORDS',
@@ -66,11 +65,11 @@ class CurrentGame extends Component {
         } else {//
 
             this.playWord('/Ayden.m4a');
-            setTimeout(() => {
-                alert("Please try a new word!");//keep track of missed
+            setTimeout(() => {//this was added because the alert was disrupting the flow of the words played.
+                alert("Please try a new word!");
                 this.props.dispatch({
                     type: 'SET_MISSED_WORDS',
-                    payload: this.props.currentWords[this.state.wordIndex]
+                    payload: this.props.currentWords[this.state.wordIndex]//keep track of missed
                 });
                 this.nextRound();
             }, 1000)
@@ -78,13 +77,13 @@ class CurrentGame extends Component {
         //check to see if game is over
 
     }
-    nextRound = () => {
+    nextRound = () => {//
         console.log('in nextRound', this.state.wordIndex)
         if (this.state.wordIndex >= (this.props.currentWords.length - 1)) {
             //alert("GREAT JOB FLOP-DOODLE!");
             this.props.history.push('/finalResults');
         } else {//sets up next round
-            const nextIndex = this.state.wordIndex + 1;
+            const nextIndex = this.state.wordIndex + 1;//created this variable so state wasn't updating before the next word played
             this.setState({ wordIndex: nextIndex });
             this.playWord(this.props.currentWords[nextIndex].audio);
             console.log('in nextRound this.playWord', this.props.currentWords[nextIndex].audio)
