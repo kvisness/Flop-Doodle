@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-//import LogOutButton from '../LogOutButton/LogOutButton';
-//import mapStoreToProps from '../../redux/mapStoreToProps';
-//import WordList from '../Admin/WordList';
 import { Howl } from 'howler';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import { withRouter, NavLink } from 'react-router-dom';
@@ -39,23 +36,19 @@ class CurrentGame extends Component {
         console.log(this.props)
         const words = this.props.missedWords
         return (
-            <div>
+            <div className='finalResults'>
                 <table>
                     <thead>{/* this is where I would like a voice file to say 'Congratualtions Flop-Doodle!  Here's your score'*/}
-                        <tr>{<td>{words.audio}</td>}
-                            
-                            <th>Words missed:</th><br />
-                        </tr>
+                        <th>Words missed:</th><br />
+                        {/* <tr>{<td>{words.audio}</td>}</tr> */}
                     </thead>
                 {/*<td>{word.sight_word}</td>*/}
-                    <tbody>{/*this will need to show the words missed */}
-                        <tr><td><button onClick={() => this.playWord(word.audio)}>Play Word</button></td>
-                            {words && words.map((word) => <tr>
-                            <td>{word}</td>
-                            </tr>)}
-                        </tr>
+                    <tbody>{/*this will need to show the words missed and have a Play Word button for each word */}
+                       
+                          {words && words.map((word) => <tr><td>{word.sight_word}</td><td><button onClick={() => this.playWord(word.audio)}>Play Word</button></td></tr>)}
+                       
                     </tbody>
-                    <div><br />
+                    <div className='FRplaymorebutton'><br />
                         <NavLink to="/games">Play More Games!</NavLink><br />
                     </div><br />
                 </table><LogOutButton/>
@@ -64,8 +57,8 @@ class CurrentGame extends Component {
     }
 }
 const mapStateToProps = (reduxState) => ({
-    missedWords: reduxState.missedWords,
-    correctWords: reduxState.correctWords//calls words, if any, from the missedWordsRedcuer
+    missedWords: reduxState.missedWords,//calls words, if any, from the missedWordsRedcuer
+    correctWords: reduxState.correctWords
 })
 // this allows us to use <App /> in index.js
 export default connect(mapStateToProps)(withRouter(CurrentGame));

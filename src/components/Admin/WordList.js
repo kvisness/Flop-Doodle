@@ -31,7 +31,7 @@ class WordList extends Component {
         sound.play();
     }
     render() {
-        console.log(this.props)
+        console.log('in WordList.js',this.props)
         const word = this.props.word
         return (
             <>
@@ -40,9 +40,7 @@ class WordList extends Component {
                 {/*<td>{word.audio}</td>*/}
                 <td><button onClick={() => this.playWord(word.audio)}>Play Word</button></td>
                 <td><button onClick={() => this.removeWord(word.id)}>Delete Word</button></td>
-                
-
-            </tr>
+               </tr>
             </>
         );
     }

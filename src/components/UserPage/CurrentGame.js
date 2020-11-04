@@ -5,11 +5,13 @@ import { connect } from 'react-redux';
 //import WordList from '../Admin/WordList';
 import { Howl } from 'howler';
 import { withRouter, NavLink } from 'react-router-dom';
+//import WordCounter from '../Admin/WordCounter';
 
 class CurrentGame extends Component {
 
     state = {
-        wordIndex: 0
+        wordIndex: 0,
+        correctWord: 0
     }
 
 
@@ -43,24 +45,27 @@ class CurrentGame extends Component {
     }
     playGame = () => {//plays the audio for each word in the index
         this.playWord(this.props.currentWords[this.state.wordIndex].audio);
-
-    }
+    }       
     checkWord = (event) => {
         console.log('in checkWord index is', this.state.wordIndex)
         //let correct = []; 
         console.log(event.target.value)//check to see if word was correct
         if (event.target.value === this.props.currentWords[this.state.wordIndex].sight_word) {
+            this.playWord('/Awesome_job_Flop_Doodle.m4a')
             alert("YAY! FLOP-DOODLE!");//keep track of correct
+            this.setState({
+                correctWord: this.state.correctWord + 1,
+            });
             this.props.dispatch({
                 type: 'SET_CORRECT_WORDS',
                 payload: this.props.currentWords[this.state.wordIndex].sight_word
-            })
-
+            })//this should keep track of the correctWords selected and display them on this page
         } else {//
+            this.playWord('/Nice_Try_Flop_Doodle.m4a')
             alert("Please try a new word!");//keep track of missed
             this.props.dispatch({
                 type: 'SET_MISSED_WORDS',
-                payload: this.props.currentWords[this.state.wordIndex].sight_word
+                payload: this.props.currentWords[this.state.wordIndex]
             })
         }
         //check to see if game is over
@@ -71,15 +76,17 @@ class CurrentGame extends Component {
             this.setState({ wordIndex: this.state.wordIndex + 1 });
             this.playWord(this.props.currentWords[this.state.wordIndex + 1].audio);
         }
-
-    }
-    //playGame will check the selected word to the correct word, 
+     }
+      
+    //checkWord will check the selected word to the correct word, 
     //if correct use alert of some kind, if missed, use alert and store this word to display on FinalResults.
     render() {
         const word = this.props.currentWords
 
         return (
             <div>
+                <h2>Flop-Doodle!</h2><br /><br />
+                    Correct Words: {this.state.correctWord} 
                 <table>
                     <thead>
                         <tr>
