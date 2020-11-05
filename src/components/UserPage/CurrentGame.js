@@ -95,8 +95,8 @@ class CurrentGame extends Component {
 
         return (
             <div>
-                <h2>Flop-Doodle!</h2><br /><br />
-                    Correct Words: {this.state.correctWord}
+                <h2>Great Score Flop-Doodle!</h2>
+                <h2>Correct Words: {this.state.correctWord}</h2>
                 <table>
                     <thead>
                         <tr>
