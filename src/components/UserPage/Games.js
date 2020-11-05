@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 //import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-import { withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom';
+import './Games.css';
 
 class Games extends Component {
 
@@ -25,27 +26,27 @@ class Games extends Component {
         return (
             <div>
                 <form onSubmit={this.onSubmit}>
-                    <h1 id="welcome">LET'S GOOOOOOO!!!</h1>
-                    
-                    <div>
-                        <p>How to Play Flop-Doodle:</p>
-                        <ol>
-                            <li>Select length of words to learn.</li>
-                            <li>Push Play.</li>
-                            <li>Listen For The Word.</li>
-                            <li>Select Correct Word and score</li>
-                        </ol>
+                    <h1 id="welcome">LET'S GO!!!</h1>
 
+                    <div className="games-js">
+                        <p>How to Play Flop-Doodle:</p>
+                        <div className="how-to-play">
+                            <p>1. Select length of words to learn.</p>
+                            <p>2. Push Play.</p>
+                            <p>3. Listen For The Word.</p>
+                            <p>4. Select Correct Word and score!</p>
+                        </div>
+                        <p><span role="img" aria-labelledby= 'jsx-a11y /accessible-emoji'>⬇️TRY to select your game!⬇️</span></p>
                     </div><br />
-                    <p>Select your game!</p>
-                    <div>
+
+                    <div className='btn-games'>
                         {/*THIS needs to link to the CurrentGame page*/}
-                        <button value={2} onClick={this.onSubmit}>2-letter words</button><br /><br />
-                        <button value={3} onClick={this.onSubmit}>3-letter words</button><br /><br />
-                        <button value={4} onClick={this.onSubmit}>4-letter words</button><br /><br />
-                        <button value={5} onClick={this.onSubmit}>5-letter words</button><br /><br />
-                        <button value={6} onClick={this.onSubmit}>6-letter words</button><br /><br />
-                        <button value={7} onClick={this.onSubmit}>7-letter words</button><br /><br />
+                        <button id='btn-2' value={2} onClick={this.onSubmit}>2-letter words</button><br /><br />
+                        <button id='btn-3' value={3} onClick={this.onSubmit}>3-letter words</button><br /><br />
+                        <button id='btn-4' value={4} onClick={this.onSubmit}>4-letter words</button><br /><br />
+                        <button id='btn-5' value={5} onClick={this.onSubmit}>5-letter words</button><br /><br />
+                        <button id='btn-6' value={6} onClick={this.onSubmit}>6-letter words</button><br /><br />
+                        <button id='btn-7' value={7} onClick={this.onSubmit}>7-letter words</button><br /><br />
                     </div><br />
                 </form>
             </div>

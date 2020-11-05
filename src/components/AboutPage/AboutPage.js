@@ -1,4 +1,5 @@
 import React from 'react';
+import {withRouter, NavLink} from 'react-router-dom';
 
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
@@ -22,7 +23,8 @@ const AboutPage = () => (
         They get encouraging voice recorded responses from the kids and parents who helped 
         create the app!  Points are awarded and it’s always a blast for kids to try and beat
         their last score so they can proudly say “I PLAYED on FLOP-DOODLE today!”</p>
+    <br /><NavLink to="/home">~--LET ME PLAY!--~</NavLink><br />
     </div>
 );
 
-export default AboutPage;   
+export default (withRouter(AboutPage));   

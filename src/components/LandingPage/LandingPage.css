@@ -57,6 +57,7 @@ Grid
 .grid-col_8 {
   flex-basis: 66.66666667%;
   max-width: 66.66666667%;
+  text-align: center;
 }
 
 .grid-col_9 {

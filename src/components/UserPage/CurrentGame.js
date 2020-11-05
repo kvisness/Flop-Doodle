@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-//import LogOutButton from '../LogOutButton/LogOutButton';
-//import mapStoreToProps from '../../redux/mapStoreToProps';
-//import WordList from '../Admin/WordList';
 import { Howl } from 'howler';
 import { withRouter, NavLink } from 'react-router-dom';
-//import WordCounter from '../Admin/WordCounter';
+import './CurrentGame.css';
 
 class CurrentGame extends Component {
 
@@ -110,8 +107,10 @@ class CurrentGame extends Component {
                     <tbody>
                         {word && word.map((currentWord) => <button onClick={this.checkWord} value={currentWord.sight_word}>{currentWord.sight_word}</button>)}
                     </tbody>
-                    <div><br />
+                    <div className="lets-play"><br />
                         <button onClick={this.playGame}>Let's PLAY! </button><br />
+                    </div> 
+                    <div className="go-back">   
                         <br /><NavLink to="/games">~--Go Back</NavLink><br />
                     </div>
                 </table>
