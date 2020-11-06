@@ -5,7 +5,7 @@ const router = express.Router();
 
 // TODO: dont forget to protect these routes
 
-router.get('/', (req, res) => {
+router.get('/', (req, rejectUnauthenticated, res) => {
     // Send back sight_word object from the session (previously queried from the database)
     const queryText = `SELECT * FROM "words" ORDER BY "id";`;
     pool.query(queryText)

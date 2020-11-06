@@ -8,12 +8,16 @@
   position: relative;
   animation: mymove 10s infinite;
   cursor: grabbing;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
 }
 
 @keyframes mymove {
   from {left: 0px;}
-  to {left: 913px;}
+  to {left: 905px;}
 }
-#logout {
+#logout:hover {
     text-align: center;
+    border-radius: 25px;
+    
 }

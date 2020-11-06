@@ -29,6 +29,8 @@ Container
 .container {
   padding: 20px;
   text-align: center;
+  margin-right: 150px;
+  margin-left: 150px;
 }
 
 /* --------------------------------------------------------------------------------

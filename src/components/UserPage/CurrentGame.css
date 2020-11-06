@@ -1,8 +1,17 @@
 button {
-background-color: mediumspringgreen;
-margin-left: 10px;
+  background-color: mediumspringgreen;
+  margin-left: 250px;
 }
 
-/* .go-back {
+.lets-play {
+  margin-left: 654px;
+}
 
-} */
+.go-back {
+  margin-left: 898px;
+}
+
+.wordsList {
+    margin-left: 5%;
+    margin-right: 5%;
+}

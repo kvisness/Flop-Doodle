@@ -38,7 +38,8 @@ class CurrentGame extends Component {
         const words = this.props.missedWords
         return (
             <div className='finalResults'> 
-                <h2>HighScore:{this.props.user.highscore}</h2>
+                <h2>Great job Flop-Doodle!  </h2>
+                <h2> Your High Score is:{this.props.user.highscore}</h2>{/*updates if higher than previous score */}
                 <table>
                     <thead>{/* this is where I would like a voice file to say 'Congratualtions Flop-Doodle!  Here's your score'*/}
                         <th>Words missed:</th><br />
@@ -49,7 +50,7 @@ class CurrentGame extends Component {
                     <div id='FRplaymorebutton'><br />
                         <NavLink to="/games">Play More Games!</NavLink><br />
                     </div><br />
-                </table><LogOutButton/>
+                </table><LogOutButton to="/home"/>
             </div>
         );
     }
