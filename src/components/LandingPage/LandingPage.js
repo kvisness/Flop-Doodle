@@ -26,10 +26,10 @@ class LandingPage extends Component {
 
         <div className="grid">
           <div className="grid-col grid-col_8">
-            <p>What's up Flop-Doodle! 
+            <h2>What's up Flop-Doodle! 
               Get ready to learn some words!<br /><br />
               Please register or login.
-            </p>
+            </h2>
           </div>
           <div className="grid-col grid-col_4">
             <RegisterForm />

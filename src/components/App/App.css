@@ -8,6 +8,7 @@ body {
   font-family: "Comic Sans MS", cursive, sans-serif;
   margin: 0px;
   background-image: url('https://ceilfire.s3-eu-west-1.amazonaws.com/upload_a617670012d85c15e90c32cf4907a5ad');
+  background-attachment: fixed;
   background-color: rgb(53, 95, 187);
   background-position: center;
   background-repeat: no-repeat;

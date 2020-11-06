@@ -1,5 +1,6 @@
 .btn-games {
   display: inline;
+  
 }
 
 .games-js {
@@ -12,10 +13,11 @@ margin-left: 30px;
 #btn-2 {
   background-color: mediumspringgreen;
   width: 130px;
-  height: 50px;
+  height: 40px;
   position: relative;
   animation: mymove 30s infinite;
   cursor: grabbing;
+  border-radius: 40px 10px;
 }
 #btn-2:hover {
   animation-play-state: paused;
@@ -29,10 +31,11 @@ margin-left: 30px;
 #btn-3 {
   background-color: rgb(183, 250, 0);
   width: 130px;
-  height: 50px;
+  height: 40px;
   position: relative;
   animation: mymove 25s infinite;
   cursor: grabbing;
+  border-radius: 15px 35px;
 }
 #btn-3:hover {
   animation-play-state: paused;
@@ -45,10 +48,11 @@ margin-left: 30px;
 #btn-4 {
   background-color: rgb(250, 0, 137);
   width: 130px;
-  height: 50px;
+  height: 40px;
   position: relative;
   animation: mymove 20s infinite;
   cursor: grabbing;
+  border-radius: 15px 1px;
 }
 #btn-4:hover {
   animation-play-state: paused;
@@ -60,10 +64,11 @@ margin-left: 30px;
 #btn-5 {
   background-color: rgb(110, 131, 223);
   width: 130px;
-  height: 50px;
+  height: 40px;
   position: relative;
   animation: mymove 15s infinite;
   cursor: grabbing;
+  border-radius: 1px 15px;
 }
 #btn-5:hover {
   animation-play-state: paused;
@@ -75,10 +80,11 @@ margin-left: 30px;
 #btn-6 {
   background-color: rgb(250, 0, 237);
   width: 130px;
-  height: 50px;
+  height: 40px;
   position: relative;
   animation: mymove 25s infinite;
   cursor: grabbing;
+  border-radius: 15px 35px;
 }
 #btn-6:hover {
   animation-play-state: paused;
@@ -90,10 +96,11 @@ margin-left: 30px;
 #btn-7 {
   background-color: rgb(250, 246, 0);
   width: 130px;
-  height: 50px;
+  height: 40px;
   position: relative;
   animation: mymove 15s infinite;
   cursor: grabbing;
+  border-radius: 15px 1px;
 }
 #btn-7:hover {
   animation-play-state: paused;

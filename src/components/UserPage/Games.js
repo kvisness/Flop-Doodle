@@ -26,17 +26,17 @@ class Games extends Component {
         return (
             <div>
                 <form onSubmit={this.onSubmit}>
-                    <h1 id="welcome">LET'S GO!!!</h1>
+                    <h1 id="welcome">C'MON LET'S PLAY FLOP!!!</h1>
 
                     <div className="games-js">
-                        <p>How to Play Flop-Doodle:</p>
+                        <h2>How to Play Flop-Doodle:</h2>
                         <div className="how-to-play">
                             <p>1. Select length of words to learn.</p>
                             <p>2. Push Play.</p>
                             <p>3. Listen For The Word.</p>
                             <p>4. Select Correct Word and score!</p>
                         </div>
-                        <p><span role="img" aria-labelledby= 'jsx-a11y /accessible-emoji'>⬇️TRY to select your game!⬇️</span></p>
+                        <p><span role="img" aria-labelledby='jsx-a11y /accessible-emoji'>⬇️👇TRY to select your game!👇⬇️</span></p>
                     </div><br />
 
                     <div className='btn-games'>

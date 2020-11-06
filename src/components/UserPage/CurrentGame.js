@@ -17,12 +17,13 @@ class CurrentGame extends Component {
             type: 'FETCH_CURRENT_WORDS',
             payload: this.props.wordLength//to the saga, bringing in a number that represents the word length needed
         })
-        this.props.dispatch({//brings in words from the db randomly as page reloads
+        this.props.dispatch({//stores correct words
             type: 'UNSET_CORRECT_WORDS'
         })
-        this.props.dispatch({//brings in words from the db randomly as page reloads
+        this.props.dispatch({//stores missed words
             type: 'UNSET_MISSED_WORDS'
         })
+        
     }
     onSubmit = (event) => {
         event.preventDefault();
@@ -47,12 +48,12 @@ class CurrentGame extends Component {
         console.log('in checkWord index is', this.state.wordIndex) 
         console.log(event.target.value)//check to see if word was correct
         if (event.target.value === this.props.currentWords[this.state.wordIndex].sight_word) {
+            this.setState({
+                correctWord: this.state.correctWord + 1,//counter keeps track of correct words
+            });
             this.playWord('/Your_awesome-ethan.m4a')
             setTimeout(() => {//this was added because the alert was disrupting the flow of the words played.
                 alert("YAY! FLOP-DOODLE!");
-                this.setState({
-                    correctWord: this.state.correctWord + 1,//keep track of correct
-                });
                 this.props.dispatch({
                     type: 'SET_CORRECT_WORDS',
                     payload: this.props.currentWords[this.state.wordIndex].sight_word
@@ -77,7 +78,11 @@ class CurrentGame extends Component {
     nextRound = () => {//
         console.log('in nextRound', this.state.wordIndex)
         if (this.state.wordIndex >= (this.props.currentWords.length - 1)) {
-            //alert("GREAT JOB FLOP-DOODLE!");
+            if(this.props.user.highscore < this.state.correctWord){this.props.dispatch({//
+                type: 'SET_HIGH_SCORE',
+                payload: {highscore: this.state.correctWord}//number of correct words requires the key from currentGame router
+            })}
+
             this.props.history.push('/finalResults');
         } else {//sets up next round
             const nextIndex = this.state.wordIndex + 1;//created this variable so state wasn't updating before the next word played
@@ -120,6 +125,7 @@ class CurrentGame extends Component {
 }
 const mapStateToProps = (reduxState) => ({
     currentWords: reduxState.currentWords,
+    user: reduxState.user,
     wordLength: reduxState.wordLength//calls games from the wordsRedcuer
 })
 // this allows us to use <App /> in index.js
