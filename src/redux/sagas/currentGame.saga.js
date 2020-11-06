@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
+
 // worker Saga: will be fired on "FETCH_CURRENT_GAME_WORDS" actions from CurrentGame page
 
 function* getWords(action) {
@@ -14,19 +15,21 @@ function* getWords(action) {
         console.log('currentGameSaga get request in getWords failed', error);
     }
 }
-// function* cdGenerator (){
-//     yield 5;
-//     const 
-// }
-// function* countDown(){
-//     let timer = 5;
-//     while (timer > 0){
-//         yield `launching timer in ${timer} seconds`;
-//     }
-// }
+function* highScore (action){
+    try {
+        console.log ('in currentGame saga highScore')
+        yield axios.put('/api/highScore/', action.payload);
+        
+        yield put({ type: 'FETCH_USER'});//setting the db highscore for each user
+    }
+    catch (error) {
+        console.log('currentGameSaga PUT request in highScore failed', error);
+    }
+}
 
 function* currentGameSaga() {
     yield takeLatest('FETCH_CURRENT_WORDS', getWords);
+    yield takeLatest('SET_HIGH_SCORE', highScore);
 }
 
 export default currentGameSaga;

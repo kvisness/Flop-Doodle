@@ -22,14 +22,14 @@ class LandingPage extends Component {
   render() {
     return (
       <div className="container">
-        <h2>{this.state.heading}</h2>
+        {/* <h2>{this.state.heading}</h2> */}
 
         <div className="grid">
           <div className="grid-col grid-col_8">
-            <p>What's up Flop-Doodle! <br /><br />
+            <h2>Welcome to Flop-Doodle! 
               Get ready to learn some words!<br /><br />
               Please register or login.
-            </p>
+            </h2>
           </div>
           <div className="grid-col grid-col_4">
             <RegisterForm />

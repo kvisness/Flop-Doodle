@@ -5,8 +5,16 @@ body,
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Comic Sans MS", cursive, sans-serif;
   margin: 0px;
+  background-image: url('https://ceilfire.s3-eu-west-1.amazonaws.com/upload_a617670012d85c15e90c32cf4907a5ad');
+  background-attachment: fixed;
+  background-color: rgb(53, 95, 187);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
 }
 
 img {
@@ -20,6 +28,9 @@ Container
 
 .container {
   padding: 20px;
+  text-align: center;
+  margin-right: 150px;
+  margin-left: 150px;
 }
 
 /* --------------------------------------------------------------------------------
@@ -29,14 +40,14 @@ Button
 .btn {
   display: inline-block;
   padding: 10px 20px;
-  border-color: #014041;
+  border-color: white;
   border-width: 1px 1px 3px;
   border-radius: 4px;
-  background-color: #00acb0;
+  background-color: #3d8a10;
   color: #f8f8f8;
   font-size: 1.1rem;
   outline: 0;
-  cursor: pointer;
+  cursor: grabbing;
 }
 
 .btn_sizeMin {
@@ -55,7 +66,7 @@ Button
 }
 
 .btn:hover {
-  background-color: #008183;
+  background-color: rgb(19, 192, 19);
   text-decoration: none;
 }
 
@@ -72,8 +83,8 @@ Button
 
 .btn_asLink:hover {
   background-color: transparent;
-  border-color: #008183;
-  color: #008183;
+  border-color: #2aec18;
+  color: #000283;
 }
 
 /* --------------------------------------------------------------------------------
@@ -101,9 +112,10 @@ Form Treatment
   max-width: 100%;
   padding: 25px;
   margin: 0 auto 20px;
-  background-color: #efefef;
+  background-color: rgb(202, 137, 15);
   border-radius: 3px;
   box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
+  text-align: center;
 }
 
 input {

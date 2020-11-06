@@ -8,14 +8,14 @@
 
 .nav {
   margin: 0 0 30px;
-  background-color: #00acb0;
+  background-color: #050505;
   overflow: hidden;
 }
 
 .nav-link {
   float: left;
   color: #f2f2f2;
-  background-color: #00acb0;
+  background-color: #050505;
   text-align: center;
   padding: 24px 10px;
   text-decoration: none;
@@ -24,12 +24,12 @@
   /* these last two make the logout button in
   the nav bar look like another link */
   border:none;
-  cursor: pointer;
+  cursor: grab;
   outline:0;
 }
 
 .nav-link:hover {
-  background-color: #008183;
+  background-color: #8d0ba7;
 }
 
 .nav-right {
