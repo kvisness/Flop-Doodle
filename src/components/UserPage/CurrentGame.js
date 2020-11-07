@@ -52,7 +52,7 @@ class CurrentGame extends Component {
             this.setState({
                 correctWord: this.state.correctWord + 1,//counter keeps track of correct words
             });
-            this.playWord('/Your_awesome-ethan.m4a')
+            this.playWord('/You_r_awesome_Ethan.m4a')
             setTimeout(() => {//this was added because the alert was disrupting the flow of the words played.
                 alert("YAY! FLOP-DOODLE!");
                 this.props.dispatch({
