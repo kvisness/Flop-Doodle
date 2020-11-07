@@ -1,6 +1,9 @@
-.finalResults, td {
+#finalResults {
     text-align: center;
 }
-/* #FRplaymorebutton{
-    margin-left: ;
-} */
+#FRplaymorebutton{
+    text-align: center;
+}
+#wordsmissed td{
+    text-align: center;
+}

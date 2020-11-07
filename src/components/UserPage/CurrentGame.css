@@ -1,17 +1,18 @@
 button {
   background-color: mediumspringgreen;
-  margin-left: 250px;
+ 
 }
 
 .lets-play {
-  margin-left: 654px;
+  margin-left: 898px;
 }
 
 .go-back {
   margin-left: 898px;
 }
 
-.wordsList {
-    margin-left: 5%;
-    margin-right: 5%;
+.wordsList{
+  margin-left: 20%;
+  margin-right: 20%;
+  
 }

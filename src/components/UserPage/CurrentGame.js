@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Howl } from 'howler';
 import { withRouter, NavLink } from 'react-router-dom';
+//import {Wave} from 'react-animated-text'
 import './CurrentGame.css';
 
 class CurrentGame extends Component {
@@ -62,7 +63,7 @@ class CurrentGame extends Component {
             }, 1000)
         } else {//
 
-            this.playWord('/Ayden.m4a');
+            this.playWord('/What_you_looking_at_Keaton.m4a');
             setTimeout(() => {//this was added because the alert was disrupting the flow of the words played.
                 alert("Please try a new word!");
                 this.props.dispatch({
