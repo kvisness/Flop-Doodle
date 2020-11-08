@@ -30,10 +30,6 @@ class EditForm extends Component {
             <>
                 <form onSubmit={this.onSubmit}>
 
-                   {/* <h2>Reset Password</h2>
-                    <input onChange={(e) => this.setState({ sight_word: e.target.value })} value={this.state.sight_word}>
-                    </input>
-                   <button type="submit">Submit</button>*/}
                     <h2>Add New Words and Audio Files</h2>
                 
                Add Word:

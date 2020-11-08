@@ -107,10 +107,11 @@ class CurrentGame extends Component {
                 <h2>Correct Words: {this.state.correctWord}</h2>
                 <h2>Words List:</h2><br />
                 <div className="wordsList">
-                    {word && word.map((currentWord) => <button onClick={this.checkWord} value={currentWord.sight_word}>{currentWord.sight_word}</button>)}
+                    {word && word.map((currentWord) => <div className="allwords">
+                        <button className="btnclr" onClick={this.checkWord} value={currentWord.sight_word}>{currentWord.sight_word}</button></div>)}
                 </div>
                 <div className="lets-play"><br />
-                    <button onClick={this.playGame}>Let's PLAY! </button><br />
+                    <button className="btnletsplay"onClick={this.playGame}>Let's PLAY! </button><br />
                 </div>
                 <div className="go-back">
                     <br /><NavLink to="/games">~--Go Back</NavLink><br />

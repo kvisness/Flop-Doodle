@@ -25,7 +25,7 @@ class UserPage extends Component {
           <br />
           
           <div className="logout">
-            <LogOutButton />
+            <LogOutButton id="logoutbutton" />
           </div>
         </form>
       </div>

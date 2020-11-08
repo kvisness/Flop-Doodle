@@ -38,12 +38,12 @@ class Games extends Component {
 
                     <div className='btn-games'>
                         {/*THIS needs to link to the CurrentGame page*/}
-                        <button id='btn-2' value={2} onClick={this.onSubmit}>2-letter words</button><br /><br />
-                        <button id='btn-3' value={3} onClick={this.onSubmit}>3-letter words</button><br /><br />
-                        <button id='btn-4' value={4} onClick={this.onSubmit}>4-letter words</button><br /><br />
-                        <button id='btn-5' value={5} onClick={this.onSubmit}>5-letter words</button><br /><br />
-                        <button id='btn-6' value={6} onClick={this.onSubmit}>6-letter words</button><br /><br />
-                        <button id='btn-7' value={7} onClick={this.onSubmit}>7-letter words</button><br /><br />
+                        <button className='btn-gamechoice'id='btn-2' value={2} onClick={this.onSubmit}>2-letter words</button><br />
+                        <button className='btn-gamechoice'id='btn-3' value={3} onClick={this.onSubmit}>3-letter words</button><br />
+                        <button className='btn-gamechoice'id='btn-4' value={4} onClick={this.onSubmit}>4-letter words</button><br />
+                        <button className='btn-gamechoice'id='btn-5' value={5} onClick={this.onSubmit}>5-letter words</button><br />
+                        <button className='btn-gamechoice'id='btn-6' value={6} onClick={this.onSubmit}>6-letter words</button><br />
+                        <button className='btn-gamechoice'id='btn-7' value={7} onClick={this.onSubmit}>7-letter words</button><br />
                     </div><br />
                 </form>
             </div>

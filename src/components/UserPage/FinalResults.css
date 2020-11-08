@@ -1,9 +1,13 @@
 #finalResults {
     text-align: center;
 }
-#FRplaymorebutton{
-    text-align: center;
+
+td {
+    font-size: large;
 }
-#wordsmissed td{
-    text-align: center;
+.finallogout{
+    margin-right: 320px;
+}
+#playword{
+    width: fit-content;
 }

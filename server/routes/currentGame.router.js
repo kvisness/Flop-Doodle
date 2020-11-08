@@ -3,7 +3,8 @@ const pool = require('../modules/pool');
 const router = express.Router();
 
 
-router.get('/:word_length?',  (req, res) => { 
+
+router.get('/:word_length?', (req, res) => { 
     const wordLength = req.params.word_length || 3;//default to 3 letters if undefined
     // Send back sight_word object from the session (previously queried from the database)
     const queryText = `SELECT * FROM "words" WHERE length(sight_word)=$1 ORDER BY RANDOM() LIMIT 10;`;
