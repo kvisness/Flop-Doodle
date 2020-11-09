@@ -103,7 +103,7 @@ class CurrentGame extends Component {
 
         return (
             <div>
-                <h2>Here is your score Flop-Doodle!</h2>
+                <h2>Good l Flop-Doodle!</h2>
                 <h2>Correct Words: {this.state.correctWord}</h2>
                 <h2>Words List:</h2><br />
                 <div className="wordsList">
