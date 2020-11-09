@@ -1,13 +1,11 @@
 .btn-games {
   display: inline;
+  
 }
 
 .games-js {
   text-align: left;
   margin-left: 800px;
-}
-.btn-gamechoice{
-  margin-bottom: 5px;
 }
 
 #btn-2 {

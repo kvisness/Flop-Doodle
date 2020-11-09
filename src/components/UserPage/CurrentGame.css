@@ -1,36 +1,17 @@
-.btnclr {
-  background-color: rgb(56, 89, 240);
-  padding: 10px;
-  margin: 1%;
-  margin-left: 4.5%;
-  margin-right: 4.5%;
-  width: 40%;
-  font-size: medium;
-  color: white;
-}
-.btnletsplay {
-  background-color: rgb(56, 89, 240);
-  padding: 10px;
-  margin: 1%;
-
-  font-size: medium;
-  color: white;
+button {
+  background-color: mediumspringgreen;
+  margin-left: 250px;
 }
 
 .lets-play {
-  text-align: center;
+  margin-left: 654px;
 }
 
 .go-back {
-  text-align: center;
+  margin-left: 898px;
 }
 
 .wordsList {
-  display: flex;
-  flex-wrap: wrap;
-}
-.allwords {
-  margin-bottom: 15px;
-  width: 20%;
-  text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
 }

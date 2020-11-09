@@ -22,19 +22,20 @@ class AdminPage extends Component {
     render() {
         console.log(this.props)
         return (
-            <div className="editform">
-                <EditForm />
-                <h2>Words List:</h2><br />
+            <div>
+                
                 <table>
                     <thead>
-                        <tbody>
-                            
-                                {this.props.adminWords && this.props.adminWords.map((word) => <WordList word={word} />)}
-                            
-                        </tbody>
+                        <tr>
+                            <th>Words List:</th><br />
+                        </tr>
                     </thead>
+                    <tbody>
+                        {this.props.adminWords && this.props.adminWords.map((word) => <WordList word={word}/>)}
+                    </tbody>
+
                 </table>
-                
+                <EditForm/>
             </div>
         );
     }
