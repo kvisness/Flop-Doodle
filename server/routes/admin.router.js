@@ -1,13 +1,12 @@
 const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
-//const {rejectUnauthenticated} = require('../modules/authentication-middleware');
+const {rejectUnauthenticated} = require('../modules/authentication-middleware');
 
-// TODO: dont forget to protect these routes
 
-router.get('/', (req, rejectUnauthenticated, res) => {
+router.get('/', rejectUnauthenticated, (req,  res) => {
     // Send back sight_word object from the session (previously queried from the database)
-    const queryText = `SELECT * FROM "words" ORDER BY "id";`;
+    const queryText = `SELECT * FROM "words" ORDER BY length(sight_word);`;
     pool.query(queryText)
         .then((result) => res.send(result.rows))
         .catch((err) => {
@@ -16,7 +15,7 @@ router.get('/', (req, rejectUnauthenticated, res) => {
         });
 });
 //allows admin to create new words
-router.post('/words', (req, res) => {
+router.post('/words', rejectUnauthenticated, (req,  res) => {
 
     const { sight_word, audio } = req.body;
     console.log('in adminrouter', sight_word, audio)
@@ -31,7 +30,7 @@ router.post('/words', (req, res) => {
         });
 });
 //allows admin to remove words
-router.delete('/:id', (req, res) => {
+router.delete('/:id', rejectUnauthenticated, (req, res) => {
     console.log(req.params);
     console.log(`We can use SQL to delete a word with id ${req.params.id}`)
     let queryText = `DELETE FROM "words" WHERE "id"=$1;`;

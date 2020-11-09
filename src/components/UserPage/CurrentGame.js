@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Howl } from 'howler';
 import { withRouter, NavLink } from 'react-router-dom';
+//import {Wave} from 'react-animated-text'
 import './CurrentGame.css';
 
 class CurrentGame extends Component {
@@ -51,7 +52,7 @@ class CurrentGame extends Component {
             this.setState({
                 correctWord: this.state.correctWord + 1,//counter keeps track of correct words
             });
-            this.playWord('/Your_awesome-ethan.m4a')
+            this.playWord('/You_r_awesome_Ethan.m4a')
             setTimeout(() => {//this was added because the alert was disrupting the flow of the words played.
                 alert("YAY! FLOP-DOODLE!");
                 this.props.dispatch({
@@ -62,7 +63,7 @@ class CurrentGame extends Component {
             }, 1000)
         } else {//
 
-            this.playWord('/Ayden.m4a');
+            this.playWord('/What_you_looking_at_Keaton.m4a');
             setTimeout(() => {//this was added because the alert was disrupting the flow of the words played.
                 alert("Please try a new word!");
                 this.props.dispatch({
@@ -106,10 +107,11 @@ class CurrentGame extends Component {
                 <h2>Correct Words: {this.state.correctWord}</h2>
                 <h2>Words List:</h2><br />
                 <div className="wordsList">
-                    {word && word.map((currentWord) => <button onClick={this.checkWord} value={currentWord.sight_word}>{currentWord.sight_word}</button>)}
+                    {word && word.map((currentWord) => <div className="allwords">
+                        <button className="btnclr" onClick={this.checkWord} value={currentWord.sight_word}>{currentWord.sight_word}</button></div>)}
                 </div>
                 <div className="lets-play"><br />
-                    <button onClick={this.playGame}>Let's PLAY! </button><br />
+                    <button className="btnletsplay"onClick={this.playGame}>Let's PLAY! </button><br />
                 </div>
                 <div className="go-back">
                     <br /><NavLink to="/games">~--Go Back</NavLink><br />

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
-import mapStoreToProps from '../../redux/mapStoreToProps';
+//import mapStoreToProps from '../../redux/mapStoreToProps';
 import { withRouter } from 'react-router-dom';
 import './UserPage.css';
 
@@ -16,7 +16,7 @@ class UserPage extends Component {
     return (
       <div>
         <form onSubmit={this.onSubmit}>
-          <h1 id="welcome">Welcome Back To FLOP-DOODLE {this.props.user.username}!</h1>
+          <h1 id="welcome">Welcome Back To FLOP-DOODLE--> {this.props.user.username}!</h1>
           <h2>Your Current High Score is:{this.props.user.highscore}</h2>
           <h2>Ready To Play?</h2>
           <div><br />
@@ -24,8 +24,8 @@ class UserPage extends Component {
           </div>
           <br />
           
-          <div id="logout">
-            <LogOutButton />
+          <div className="logout">
+            <LogOutButton id="logoutbutton" />
           </div>
         </form>
       </div>

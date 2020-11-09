@@ -1,6 +1,13 @@
-.finalResults, td {
+#finalResults {
     text-align: center;
 }
-/* #FRplaymorebutton{
-    margin-left: ;
-} */
+
+td {
+    font-size: large;
+}
+.finallogout{
+    margin-right: 320px;
+}
+#playword{
+    width: fit-content;
+}

@@ -20,26 +20,26 @@ body {
 img {
   display: inline-block;
   max-width: 100%;
-}
+} 
 
 /* --------------------------------------------------------------------------------
 Container
 -------------------------------------------------------------------------------- */
 
-.container {
+ .container {
   padding: 20px;
   text-align: center;
   margin-right: 150px;
   margin-left: 150px;
-}
+} 
 
 /* --------------------------------------------------------------------------------
 Button
 -------------------------------------------------------------------------------- */
 
-.btn {
+ .btn {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 5px;
   border-color: white;
   border-width: 1px 1px 3px;
   border-radius: 4px;
@@ -71,7 +71,7 @@ Button
 }
 
 /* This line makes the "Register" and "Login" buttons look like links */
-.btn_asLink {
+ .btn_asLink {
   padding: 0;
   border-width: 0;
   border-bottom: 1px solid #444;
@@ -85,13 +85,13 @@ Button
   background-color: transparent;
   border-color: #2aec18;
   color: #000283;
-}
+}  
 
 /* --------------------------------------------------------------------------------
 Alert
 -------------------------------------------------------------------------------- */
 
-.alert {
+ .alert {
   box-sizing: border-box;
   padding: 15px 10px;
   margin: 15px 0;
@@ -100,13 +100,13 @@ Alert
   border-radius: 3px;
   color: #e01616;
   font-size: 0.8rem;
-}
+} */
 
 /* --------------------------------------------------------------------------------
 Form Treatment
 -------------------------------------------------------------------------------- */
 
-.formPanel {
+ .formPanel {
   box-sizing: border-box;
   width: 400px;
   max-width: 100%;
@@ -121,4 +121,10 @@ Form Treatment
 input {
   margin: 5px;
   margin-bottom: 10px;
+}  
+.editform{
+  text-align: center;
+}
+table{
+  margin: auto;
 }

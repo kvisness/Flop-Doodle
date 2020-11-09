@@ -8,16 +8,21 @@
   position: relative;
   animation: mymove 10s infinite;
   cursor: grabbing;
-  border-bottom-right-radius: 25px;
-  border-top-right-radius: 25px;
+  border-radius: 5px 25px;
+  background-color: rgb(73, 27, 202);
+  color: white;
 }
 
 @keyframes mymove {
   from {left: 0px;}
-  to {left: 905px;}
+  to {left: 255px;}
 }
-#logout:hover {
-    text-align: center;
-    border-radius: 25px;
-    
+.logout:hover {
+  text-align: center;
+  border-radius: 25px 0px;
+  
+}
+button {
+  background-color: mediumturquoise;
+  border-radius: 25px 15px;
 }
