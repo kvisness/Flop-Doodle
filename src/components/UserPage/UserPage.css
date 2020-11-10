@@ -23,6 +23,7 @@
   
 }
 button {
-  background-color: mediumturquoise;
+  background-color: rgb(226, 72, 72);
   border-radius: 25px 15px;
+  color: black;
 }

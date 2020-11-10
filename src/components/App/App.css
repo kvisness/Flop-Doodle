@@ -128,3 +128,23 @@ input {
 table{
   margin: auto;
 }
+.loginUsernm{
+  margin-left: 800px;
+}
+.loginPasswd{ 
+  margin-left: 806px;
+}
+.loginbutn{
+  margin-left: 925px;
+  background-color: rgb(19, 192, 19);
+}
+.registrUsernm{
+  margin-left: 800px;
+}
+.registrPasswd{ 
+  margin-left: 806px;
+}
+.registrloginbutn{
+  margin-left: 925px;
+  background-color: rgb(19, 192, 19);
+}

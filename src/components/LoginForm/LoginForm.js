@@ -40,7 +40,7 @@ class LoginForm extends Component {
           </h3>
         )}
         <div>
-          <label htmlFor="username">
+          <label className="loginUsernm" htmlFor="username">
             Username:
             <input type="text"
               name="username"
@@ -50,8 +50,8 @@ class LoginForm extends Component {
             />
           </label>
         </div>
-        <div>
-          <label htmlFor="password">
+        <div >
+          <label className="loginPasswd" htmlFor="password">
             Password:
             <input type="password"
               name="password"
@@ -62,7 +62,7 @@ class LoginForm extends Component {
           </label>
         </div>
         <div>
-          <input className="btn" type="submit" name="submit" value="Log In" />
+          <input className="loginbutn" type="submit" name="submit" value="Log In" />
         </div>
       </form>
     );

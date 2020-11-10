@@ -4,11 +4,15 @@
 
 td {
     font-size: large;
+    margin-left: 875px;
 }
 .finallogout{
-    margin-right: 320px;
+    margin-left: 0px;
 }
 #playword{
     width: fit-content;
-    
+    margin-left: 20px;
+}
+.missdwds{
+    margin-left: 900px;
 }

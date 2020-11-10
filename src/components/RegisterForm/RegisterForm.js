@@ -46,7 +46,7 @@ class RegisterForm extends Component {
             />
           </label>
         </div>
-        <div>
+        <div >
           <label htmlFor="password">
             Password:
             <input type="password"
@@ -58,7 +58,7 @@ class RegisterForm extends Component {
           </label>
         </div>
         <div>
-          <input className="btn" type="submit" name="submit" value="Register" />
+          <input type="submit" name="submit" value="Register" />
         </div>
       </form>
     );
