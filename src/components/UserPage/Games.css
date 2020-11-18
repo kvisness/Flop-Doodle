@@ -4,7 +4,7 @@
 
 .games-js {
   text-align: left;
-  margin-left: 800px;
+  margin-left: 675px;
 }
 .btn-gamechoice{
   margin-bottom: 5px;
@@ -25,7 +25,7 @@
 
 @keyframes mymove {
   from {left: 0px;}
-  to {left: 913px;}
+  to {left: 800px;}
 }
 
 #btn-3 {
@@ -43,7 +43,7 @@
 
 @keyframes mymove {
   from {left: 0px;}
-  to {left: 913px;}
+  to {left: 800px;}
 }
 #btn-4 {
   background-color: rgb(250, 0, 137);
@@ -59,7 +59,7 @@
 }
 @keyframes mymove {
   from {left: 0px;}
-  to {left: 913px;}
+  to {left: 800px;}
 }
 #btn-5 {
   background-color: rgb(110, 131, 223);
@@ -75,7 +75,7 @@
 }
 @keyframes mymove {
   from {left: 0px;}
-  to {left: 913px;}
+  to {left: 800px;}
 }
 #btn-6 {
   background-color: rgb(250, 0, 237);
@@ -91,7 +91,7 @@
 }
 @keyframes mymove {
   from {left: 0px;}
-  to {left: 913px;}
+  to {left: 800px;}
 }
 #btn-7 {
   background-color: rgb(250, 246, 0);
@@ -107,5 +107,5 @@
 }
 @keyframes mymove {
   from {left: 0px;}
-  to {left: 913px;}
+  to {left: 800px;}
 }

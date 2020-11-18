@@ -3,8 +3,8 @@
 }
 
 #goto {
-  width: 110;
-  height: 100;
+  width: 110 px;
+  height: 100 px;
   position: relative;
   animation: mymove 10s infinite;
   cursor: grabbing;

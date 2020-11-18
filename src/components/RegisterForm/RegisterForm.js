@@ -36,7 +36,7 @@ class RegisterForm extends Component {
           </h3>
         )}
         <div>
-          <label htmlFor="username">
+          <label className="registrUsernm" htmlFor="username">
             Username:
             <input type="text"
               name="username"
@@ -47,7 +47,7 @@ class RegisterForm extends Component {
           </label>
         </div>
         <div >
-          <label htmlFor="password">
+          <label className="registrPasswd" htmlFor="password">
             Password:
             <input type="password"
               name="password"
@@ -57,8 +57,8 @@ class RegisterForm extends Component {
             />
           </label>
         </div>
-        <div>
-          <input type="submit" name="submit" value="Register" />
+        <div className="registrloginbutn">
+          <input className="registrloginbutn" type="submit" name="submit" value="Register" />
         </div>
       </form>
     );

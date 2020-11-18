@@ -2,9 +2,9 @@
     text-align: center;
 }
 
-td {
+tr{
     font-size: large;
-    margin-left: 875px;
+    text-align: center;
 }
 .finallogout{
     margin-left: 0px;
@@ -12,7 +12,9 @@ td {
 #playword{
     width: fit-content;
     margin-left: 20px;
+    text-align: center;
 }
 .missdwds{
-    margin-left: 900px;
+    text-align: center;
+    margin-left: 780px;
 }

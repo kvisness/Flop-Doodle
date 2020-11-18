@@ -126,25 +126,26 @@ input {
   text-align: center;
 }
 table{
-  margin: auto;
+  margin: auto5
 }
 .loginUsernm{
-  margin-left: 800px;
+  margin-left: 690px;
 }
 .loginPasswd{ 
-  margin-left: 806px;
+  margin-left: 696px;
 }
 .loginbutn{
-  margin-left: 925px;
+  margin-left: 812px;
   background-color: rgb(19, 192, 19);
 }
 .registrUsernm{
-  margin-left: 800px;
+  margin-left: 700px;
 }
 .registrPasswd{ 
-  margin-left: 806px;
+  margin-left: 706px;
 }
 .registrloginbutn{
-  margin-left: 925px;
-  background-color: rgb(19, 192, 19);
+  margin-left: 403px;
+  color: purple ;
+  
 }

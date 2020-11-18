@@ -16,11 +16,12 @@ class UserPage extends Component {
     return (
       <div>
         <form onSubmit={this.onSubmit}>
-          <h1 id="welcome">Welcome Back To FLOP-DOODLE--> {this.props.user.username}!</h1>
+          <h1 id="welcome">Welcome To FLOP-DOODLE--> {this.props.user.username}!</h1>
           <h2>Your Current High Score is:{this.props.user.highscore}</h2>
           <h2>Ready To Play?</h2>
+          <h2>Catch the button!</h2>
           <div><br />
-            <button id="goto">Go To Games{/*THIS needs to link to the GAMES page*/}</button><br />
+            <button id="goto">Go To Games{/*This will link to the GAMES page*/}</button><br />
           </div>
           <br />
           
